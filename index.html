@@ -1,0 +1,43 @@
+<html>
+
+<head>
+    <title>Health Advisor</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+
+<body>
+    <div id="navbar">
+        <h1 style="color:teal;float: left;margin-left:10%">Health Advisor</h1>
+        <img style="height:45px;width:50px;float: left;margin-top: 15px" src="head.png">
+    </div>
+    <div class="flexbox">
+        <div>
+            <h1>Enter Name</h1>
+            <input type="text" id="namein">
+            <h1>Your Weight</h1>    
+            <input type="number" id="weightin">
+            <h1>Enter Your Daily Food Cycle</h1>
+            <button id="createmeal">Create Meal</button>
+            <input type="text" id="meal" placeholder="entermeal">
+            <input type="number" id="cal" placeholder="entercal">
+            <div id="meal"></div>
+            <h2>Calorie Burning Cycle</h2>
+            <button onclick="calculate()">Burn Cal</button>
+            <input type="text" id="excercise" placeholder="enter excercise">
+            <input type="number" id="calburn" placeholder="enter burn cal">
+            <h2 id="ttl">Total Calories</h2>
+        </div>
+    </div>
+
+    <button onclick="add_health()">Add customer</button>
+    <button onclick="display_all()">display</button>
+ 
+   <button onclick="total()">total</button>
+    <div id="displayall">
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>
