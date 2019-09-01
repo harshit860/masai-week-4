@@ -5,10 +5,15 @@
 }
 .flexbox
 {
-    display: flex;
+    display: flex;  
     flex-direction: row;
     margin-left: 40px;
     color:teal; 
+}
+.big
+{
+    font-size:30px;
+    color:darkgrey;
 }
 
 #navbar

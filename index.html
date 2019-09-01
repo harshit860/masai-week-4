@@ -14,25 +14,37 @@
         <div>
             <h1>Enter Name</h1>
             <input type="text" id="namein">
-            <h1>Your Weight</h1>    
+            <h1>Your Weight</h1>
             <input type="number" id="weightin">
             <h1>Enter Your Daily Food Cycle</h1>
             <button id="createmeal">Create Meal</button>
             <input type="text" id="meal" placeholder="entermeal">
             <input type="number" id="cal" placeholder="entercal">
             <div id="meal"></div>
-            <h2>Calorie Burning Cycle</h2>
+            <h2>Calorie Burning Cycle <h3>(Should be more than 100)</h3>
+            </h2>
             <button onclick="calculate()">Burn Cal</button>
             <input type="text" id="excercise" placeholder="enter excercise">
             <input type="number" id="calburn" placeholder="enter burn cal">
-            <h2 id="ttl">Total Calories</h2>
+            <h2 id="ttl"></h2>
+            <h2 id="body2">Final Calories</h2>
+
+            <h1 id="name"></h1>
+        </div>
+
+
+        <div>
+            <div>
+                <p style="font-size: 50px">REFER THIS CHART FOR CALORIES OF FOOD</p>
+            </div>
+            <img style="width:1100;height:800px;margin-left: 200px"
+                src="https://capriartfilmfestival.com/wp-content/uploads/2019/05/printable-food-calorie-chart-awesome-posters-pinterest-of-printable-food-calorie-chart.jpg">
         </div>
     </div>
 
     <button onclick="add_health()">Add customer</button>
-    <button onclick="display_all()">display</button>
- 
-   <button onclick="total()">total</button>
+    <button onclick="display_all()">Display</button>
+    <button onclick="total()">total</button>
     <div id="displayall">
     </div>
 

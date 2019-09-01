@@ -1,6 +1,7 @@
 // 
 var main_array = []
-var total1 =0
+var total1 = 0;
+var total2 = 0;
 var name_input
 var weight_input
 var food_input = []
@@ -36,8 +37,8 @@ function createmeal() {
     food_input.push(document.getElementById("meal").value)
     caloriesin_input.push(Number(document.getElementById("cal").value))
     document.getElementById("meal").value = '';
-    document.getElementById("cal").value='';
-    
+    document.getElementById("cal").value = '';
+
     console.log('after', food_input)
 }
 function add_health() {
@@ -57,14 +58,23 @@ function add_health() {
 }
 
 function display_all() {
-    var display_container = document.getElementById("displayall");
+    var display_container = document.getElementById("name");
+
     //Clearing All Input Feilds
     clear();
 
     for (var i = 0; i <= main_array.length; i++) {
         element = document.createElement('p')
-        element.textContent = main_array[i].show();
+        element2 = document.createElement('p')
+
+        element.setAttribute('class', 'big')
+        element.textContent = main_array[i].name
+        element2.setAttribute('class', 'big')
+        element2.textContent = main_array[i].weight
+
         display_container.appendChild(element)
+        display_container.appendChild(element2)
+
     }
 }
 
@@ -80,20 +90,44 @@ function calculate() {
     excercise_input.push(document.getElementById("excercise").value)
     caloriesout_input.push(Number(document.getElementById("calburn").value))
     console.log(caloriesout_input)
-    document.getElementById("excercise").value=''
-    document.getElementById("calburn").value=''
+    document.getElementById("excercise").value = ''
+    document.getElementById("calburn").value = ''
+    console.log(caloriesout_input)
 }
 
 function total() {
-    
+
     for (var a = 0; a < caloriesin_input.length; a++) {
-       
+
         total1 = total1 + Number(caloriesin_input[a]);
-        
+
     }
-    var body=document.getElementById('ttl')
-    var ele=document.createElement('p')
-    ele.textContent=total1;
+    for (var i = 0; i < caloriesout_input.length; i++) {
+        total2 = total2 + Number(caloriesout_input[i]);
+    }
+    // for()
+    var body = document.getElementById('ttl')
+    var body2 = document.getElementById('body2')
+    var ele = document.createElement('p')
+    var ele2 = document.createElement('p')
+    var ele3 = document.createElement('p')
+
+    ele.textContent = 'Total Calories Consumed by' + total1;
+    ele2.textContent = 'Total Calories Spend' + total2;
+    var diff = total1 - total2;
+    ele3.innerHTML = diff;
+    if (total1 <= 2500 && total2 >= 100) {
+        var elem4 = document.createElement('p');
+        elem4.textContent = "Your calories intake is proper Keep going"
+        body2.appendChild(elem4)
+    }
+    if (total1 > 2500 && total2 <= 100) {
+        var elem5 = document.createElement('p')
+        elem5.textContent = "Eat less Work more Calorie Intake not Proper"
+        body2.appendChild(elem5)
+    }
     body.appendChild(ele)
-    console.log(total1)
+    body.appendChild(ele2)
+    body2.appendChild(ele3)
+
 }
